@@ -13,6 +13,103 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
 	</head>
+	<Style>
+		* {
+		box-sizing: border-box;
+		}
+
+		/* The actual timeline (the vertical ruler) */
+		.timeline {
+		position: relative;
+		max-width: 1200px;
+		margin: 0 auto;
+		}
+
+		/* The actual timeline (the vertical ruler) */
+		.timeline::after {
+		content: '';
+		position: absolute;
+		width: 6px;
+		background-color: white;
+		top: 0;
+		bottom: 0;
+		left: 50%;
+		margin-left: -3px;
+		}
+
+		/* Container around content */
+		.container {
+		padding: 0px 45px;
+		position: relative;
+		background-color: inherit;
+		width: 65%;
+		}
+
+		/* The circles on the timeline */
+		.container::after {
+		content: '';
+		position: absolute;
+		width: 25px;
+		height: 25px;
+		right: -17px;
+		background-color: white;
+		border: 4px solid #FF9F55;
+		top: 15px;
+		border-radius: 50%;
+		z-index: 1;
+		}
+
+		/* Place the container to the left */
+		.left {
+		left: -15.4%;
+		}
+
+		/* Place the container to the right */
+		.right {
+		left: 50%;
+		}
+
+		/* Add arrows to the left container (pointing right) */
+		.left::before {
+		content: " ";
+		height: 0;
+		position: absolute;
+		top: 22px;
+		width: 0;
+		z-index: 1;
+		right: 30px;
+		border: medium solid white;
+		border-width: 10px 0 10px 10px;
+		border-color: transparent transparent transparent white;
+		}
+
+		/* Add arrows to the right container (pointing left) */
+		.right::before {
+		content: " ";
+		height: 0;
+		position: absolute;
+		top: 22px;
+		width: 0;
+		z-index: 1;
+		left: 30px;
+		border: medium solid white;
+		border-width: 10px 10px 10px 0;
+		border-color: transparent white transparent transparent;
+		}
+
+		/* Fix the circle for containers on the right side */
+		.right::after {
+		left: -13px;
+		}
+
+		/* The actual content */
+		.content {
+		padding: 0px 15px;
+		background-color: white;
+		position: relative;
+		border-radius: 6px;
+		}
+	</Style>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -22,7 +119,7 @@
 					<div id="intro">
 						<h1>Welcome to<br />
 						Willian's Website</h1>
-						<p>A place I've dedicated some time to summarize projects that I've worked on.</p>
+						<p>A place dedicated to introduce myself and summarize projects that I've worked on.</p>
 						<ul class="actions">
 							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
 						</ul>
@@ -42,6 +139,7 @@
 						</ul>
 						<ul class="icons">
 							<li><a href="https://www.linkedin.com/in/willian-melnechuky/" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="Folders/Resume.pdf" target="_blank" class="icon fa-file"><span class="label">Resume</span></a></li>
 							<!--
 							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
@@ -74,12 +172,112 @@
 						<header class="major">
 							<span class="date">June 1, 2021</span>
 							<div style="clear:left"> 
-								<a style="float: left;"><img src="images/Willian Melnechuky.jpg" alt="Profile Picture" height="467px" width="540px" style="padding: 20px;"/></a>
-								<p>	I am Mechanical Engineering student in my penultimate year at McMaster University in the co-op program.<br />
-									My work experience and education in engineering practices has shaped to be a curious individual that percistantly seeks out new knowledge and challenges.</p>
+								<a style="float: left;"><img src="images/Willian Melnechuky.jpg" alt="Profile Picture" height="312px" width="360px" style="padding: 20px;"/></a>
+								<p style="font-size: 18px;">I am Mechanical Engineering & Management student in my final year at McMaster University in the co-op program.<br/>
+									<br/>My work experience and education in engineering practices have shaped me to be a curious individual always seeking out new challenges.<br/>
+									<br/> On this website, I summarize projects that I've worked on and reflect on the engineering topics.<br/> 
+								</p>
 							</div>
+							<span class="date" style="margin: 0 0 0 0;">Timeline</span>
 						</header>	
 						<!-- Posts -->
+						<div style="background: url(images/Mechatronics.jpg) 85% 0;font-size: 15px;" > 
+							
+							<div class="timeline">
+								<div class="container right">
+									<div class="content">
+									  <h3>May, 2022</h3>
+									  <p>Expected Graduation at <a target="_blank" href="https://www.mcmaster.ca/"> McMaster University</a></p>
+									</div>
+								  </div>
+								<div class="container left">
+								  <div class="content">
+									<h3>May, 2021</h3>
+									<p>4-month fulltime at <a target="_blank" href="https://www.poolsuppliescanada.ca/">Pool Supplies Canada</a></p>
+								  </div>
+								</div>
+								<div class="container right">
+								  <div class="content">
+									<h3>Sept, 2020</h3>
+									<p>4th year Mechanical Engineering & <a target="_blank" href="https://www.eng.mcmaster.ca/engineering-management-program"> Management</a> at <a target="_blank" href="https://www.mcmaster.ca/"> McMaster University</a></p>
+								  </div>
+								</div>
+								<div class="container left">
+								  <div class="content">
+									<h3>May, 2019</h3>
+									<p>16-month internship at <a target="_blank" href="http://www.cogentpowerinc.com/"> Cogent Power</a> as a Product Engineer and began leading <a target="_blank" href="http://www.mcmasterhyperloop.ca/ourTeam"> McMaster Hyperloop</a> Electrical Team</p>
+								  </div>
+								</div>
+								<div class="container right">
+								  <div class="content">
+									<h3>Sept, 2018</h3>
+									<p>3rd year Mechanical Engineering & <a target="_blank" href="https://www.eng.mcmaster.ca/engineering-management-program"> Management</a> at <a target="_blank" href="https://www.mcmaster.ca/"> McMaster University</a></p>
+								  </div>
+								</div>
+								<div class="container left">
+								  <div class="content">
+									<h3>May, 2018</h3>
+									<p>4-month fulltime at <a target="_blank" href="https://www.poolsuppliescanada.ca/">Pool Supplies Canada</a></p>
+								  </div>
+								</div>
+								<div class="container right">
+								  <div class="content">
+									<h3>Jan, 2018</h3>
+									<p>Participated at McMaster's <a target="_blank" href="https://www.mcmasterdesignleague.com/">Designathon Competition</a></p>
+								  </div>
+								</div>
+								<div class="container left">
+									<div class="content">
+									  <h3>Sept, 2017</h3>
+									  <p>Continued 2nd year Mechanical Engineering & <a target="_blank" href="https://www.eng.mcmaster.ca/engineering-management-program"> Management</a> at <a target="_blank" href="https://www.mcmaster.ca/"> McMaster University</a></p>
+									</div>
+								</div>
+								<div class="container right">
+									<div class="content">
+									<h3>May, 2017</h3>
+									<p>4-month fulltime at <a target="_blank" href="https://www.poolsuppliescanada.ca/">Pool Supplies Canada</a></p>
+									</div>
+								</div>
+								<div class="container left">
+									<div class="content">
+									<h3>Sept, 2016</h3>
+									<p>2nd year Mechanical Engineering & <a target="_blank" href="https://www.eng.mcmaster.ca/engineering-management-program"> Management</a> at <a target="_blank" href="https://www.mcmaster.ca/"> McMaster University</a></p>
+									</div>
+								</div>
+								<div class="container right">
+									<div class="content">
+									<h3>May, 2016</h3>
+									<p>4-month fulltime at <a target="_blank" href="http://www.strongarmlandscaping.com/">Strongarm Landscaping</a></p>
+									</div>
+								</div>
+								<div class="container left">
+									<div class="content">
+									<h3>Sept, 2015</h3>
+									<p>1st year Engineering at <a target="_blank" href="https://www.mcmaster.ca/"> McMaster University</a></p>
+									</div>
+								</div>
+								<div class="container right">
+									<div class="content">
+									<h3>July, 2015</h3>
+									<p>3-month fulltime at <a target="_blank" href="https://www.swisschalet.com/en.html">Swiss Chalet</a></p>
+									</div>
+								</div>
+								<div class="container left">
+									<div class="content">
+									<h3>June, 2015</h3>
+									<p>Graduated at <a target="_blank" href="https://secondary.hcdsb.org/assumption/">Assumption Highschool</a></p>
+									</div>
+								</div>
+								<div class="container right">
+									<div class="content">
+									<h3>Sept, 2012</h3>
+									<p>Started working part-time at <a target="_blank" href="https://www.swisschalet.com/en.html">Swiss Chalet</a></p>
+									</div>
+								</div>
+						  </div>
+						</div>
+						
+						<!--
 							<section class="posts">
 								<article>
 									<header>
@@ -154,11 +352,12 @@
 									</ul>
 								</article>
 							</section>
-
+						-->
 						<!-- Footer -->
-							<footer>
+							
+							<!--<footer>
 								<div class="pagination">
-									<!--<a href="#" class="previous">Prev</a>-->
+									<a href="#" class="previous">Prev</a>
 									<a href="#" class="page active">1</a>
 									<a href="#" class="page">2</a>
 									<a href="#" class="page">3</a>
@@ -168,8 +367,8 @@
 									<a href="#" class="page">10</a>
 									<a href="#" class="next">Next</a>
 								</div>
-							</footer>
-
+							</footer>-->
+							
 					</div>
 
 				<!-- Footer -->
