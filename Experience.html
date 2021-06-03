@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
-	<body class="is-preload">
+	<body class="is-preload" onload="openSection(event,'none')">
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -44,18 +44,37 @@
 					<div id="main">
 
 						<!-- Post -->
-							<Section class="post">
-								<header class="major">
-									<h1>Covered in this section</h1>
-								</header>
-								<ul>
-									<li>Cogent Power Inc</li>
-									<li>McMaster Hyperloop</li>
-									<li>McMaster EcoCar Team</li>
-									<li>McMaster Designathon</li>
-								</ul>
-
-							</Section>
+					
+						<div class="tab" style="padding: 1% 1% 1% 1%;;">
+							<button class="tablinks" onclick="openSection(event, 'Cogent Power Inc')">Cogent Power Inc</button>
+							<button class="tablinks" onclick="openSection(event, 'McMaster Hyperloop')">McMaster Hyperloop</button>
+							<button class="tablinks" onclick="openSection(event, 'McMaster EcoCar Team')">McMaster EcoCar Team</button>
+							<button class="tablinks" onclick="openSection(event, 'McMaster Designathon')">McMaster Designathon</button>
+						</div>
+						
+						<div id="Cogent Power Inc" class="tabcontent">
+							<h3 style="padding: 0px; margin: 0px">Cogent Power Inc</h3>
+							<p style="padding: 0px; margin: 0px">Sample Text</p>
+						</div>
+						
+						<div id="McMaster Hyperloop" class="tabcontent">
+							<h3>McMaster Hyperloop</h3>
+							<p>Sample Text</p>
+						</div>
+						
+						<div id="McMaster EcoCar Team" class="tabcontent">
+							<h3>McMaster EcoCar Team</h3>
+							<p>Sample Text</p>
+						</div>
+						<div id="McMaster Designathon" class="tabcontent">
+							<h3>McMaster Designathon</h3>
+							<p>Sample Text</p>
+						</div>
+						<div id="none" class="tabcontent">
+							<p>Sample Text</p>
+						</div>
+						
+							
 							
 							<section class="post">
 								<header class="major">
@@ -531,6 +550,27 @@ print 'It took ' + i + ' iterations to sort the deck.';
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				function openSection(evt, tabName) {
+					// Declare all variables
+					var i, tabcontent, tablinks;
 
+					// Get all elements with class="tabcontent" and hide them
+					tabcontent = document.getElementsByClassName("tabcontent");
+					for (i = 0; i < tabcontent.length; i++) {
+						tabcontent[i].style.display = "none";
+					}
+
+					// Get all elements with class="tablinks" and remove the class "active"
+					tablinks = document.getElementsByClassName("tablinks");
+					for (i = 0; i < tablinks.length; i++) {
+						tablinks[i].className = tablinks[i].className.replace(" active", "");
+					}
+
+					// Show the current tab, and add an "active" class to the link that opened the tab
+					document.getElementById(tabName).style.display = "block";
+					evt.currentTarget.className += " active";
+				}
+			</script>
 	</body>
 </html>

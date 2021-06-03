@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
-	<body class="is-preload">
+	<body class="is-preload" onload="openSection(event,'none')">
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -45,32 +45,34 @@
 					<div id="main">
 
 						<!-- Post -->
-						<Section class="post">
-							<header class="major">
-								<h1>Covered in this section</h1>
-							</header>
-							<ul>
-								<li>Lab Projects</li>
-								<li>School Projects</li>
-								<li>Personal Projects</li>
-								<li>Work Projects</li>
-							</ul>
-
-						</Section>
-							<section class="post">
-								<header class="major">
-									<span class="date">April 25, 2017</span>
-									<h1>This is a<br />
-									Generic Page</h1>
-									<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
-									facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
-									amet nullam sed etiam veroeros.</p>
-								</header>
-								<div class="image main"><img src="images/pic01.jpg" alt="" /></div>
-								<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur sapien risus, commodo eget turpis at, elementum convallis enim turpis, lorem ipsum dolor sit amet nullam.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus. Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum.</p>
-							</section>
-
+						<div class="tab" style="padding: 1% 1% 1% 1%;;">
+							<button class="tablinks" onclick="openSection(event, 'Lab Projects')">Lab Projects</button>
+							<button class="tablinks" onclick="openSection(event, 'School Projects')">School Projects</button>
+							<button class="tablinks" onclick="openSection(event, 'Personal Projects')">Personal Projects</button>
+							<button class="tablinks" onclick="openSection(event, 'Work Projects')">Work Projects</button>
+						</div>
+						
+						<div id="Lab Projects" class="tabcontent">
+							<h3 style="padding: 0px; margin: 0px">Lab Projects</h3>
+							<p style="padding: 0px; margin: 0px">Sample Text</p>
+						</div>
+						
+						<div id="School Projects" class="tabcontent">
+							<h3>School Projects</h3>
+							<p>Sample Text</p>
+						</div>
+						
+						<div id="Personal Projects" class="tabcontent">
+							<h3>Personal Projects</h3>
+							<p>Sample Text</p>
+						</div>
+						<div id="Work Projects" class="tabcontent">
+							<h3>Work Projects</h3>
+							<p>Sample Text</p>
+						</div>
+						<div id="none" class="tabcontent">
+							<p>Sample Text</p>
+						</div>
 					</div>
 
 				<!-- Footer -->
@@ -159,6 +161,27 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				function openSection(evt, tabName) {
+					// Declare all variables
+					var i, tabcontent, tablinks;
 
+					// Get all elements with class="tabcontent" and hide them
+					tabcontent = document.getElementsByClassName("tabcontent");
+					for (i = 0; i < tabcontent.length; i++) {
+						tabcontent[i].style.display = "none";
+					}
+
+					// Get all elements with class="tablinks" and remove the class "active"
+					tablinks = document.getElementsByClassName("tablinks");
+					for (i = 0; i < tablinks.length; i++) {
+						tablinks[i].className = tablinks[i].className.replace(" active", "");
+					}
+
+					// Show the current tab, and add an "active" class to the link that opened the tab
+					document.getElementById(tabName).style.display = "block";
+					evt.currentTarget.className += " active";
+				}
+			</script>
 	</body>
 </html>
