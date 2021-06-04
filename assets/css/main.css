@@ -178,13 +178,18 @@ input, select, textarea {
 			border: 1px solid #ccc;
 			background-color: #eeeeee;
 			width: 20%;
-			height: 300px;
+			/*height: 700px;
+			*/
+			display: inline-block;
+			padding: 1% 1%;
+			height: 100%;
 			text-align: center;
+			
 		}
 
 		/* Style the buttons that are used to open the tab content */
 		.tab button {
-			display: inline;
+			display: inline-block;
 			background-color: inherit;
 			color: black;
 			padding: 0px 0px;
@@ -194,7 +199,6 @@ input, select, textarea {
 			text-align: center;
 			cursor: pointer;
 			transition: 0.3s;
-			float: center;
 		}
 
 		/* Change background color of buttons on hover */
@@ -209,15 +213,28 @@ input, select, textarea {
 
 		/* Style the tab content */
 		.tabcontent {
-		float: left;
-		padding: 0px 0px;
+		float: right;
+		padding: 1% 1%;
 		border: 1px solid #ccc;
 		width: 80%;
+		height: 100%;
+		margin: auto;
 		border-left: none;
-		height: 300px;
+		display: inline-block;
+		
+		/*height: 700px;*/
 		background: #eeeeee;
 		margin: 0 0 0 0;
 		}
+		.tabMainContent {
+			display: inline-block;
+			/*float: left;*/
+			padding: 0px 0px;
+			width: 100%;
+			border-left: none;
+			background: #ffffff;
+			margin: 0 0 0 0;
+			}
 /* Basic */
 
 	@-ms-viewport {
@@ -3162,10 +3179,12 @@ input, select, textarea {
 			border: solid 1px;
 			border-left: 0;
 			border-right: 0;
+			table-layout: auto;
 		}
 
 		table td {
 			padding: 0.75rem 0.75rem;
+			font-size: 0.7rem;
 		}
 
 		table th {
@@ -3222,11 +3241,11 @@ input, select, textarea {
 			}
 
 	table tbody tr {
-		border-color: #eeeeee;
+		border-color: #ffffff;
 	}
 
 		table tbody tr:nth-child(2n + 1) {
-			background-color: rgba(220, 220, 220, 0.25);
+			background-color: rgba(220, 220, 220, 0.11);
 		}
 
 	table th {
