@@ -29,6 +29,7 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
 
+
 body {
 	line-height: 1;
 }
@@ -71,7 +72,169 @@ input, select, textarea {
 	-ms-appearance: none;
 	appearance: none;
 }
+/*Willian Add ons*/
+	/*Timeline CSS*/
+	* {
+		box-sizing: border-box;
+		}
 
+		/* The actual timeline (the vertical ruler) */
+		.timeline {
+		position: relative;
+		max-width: 1200px;
+		margin: 0 auto;
+		}
+
+		/* The actual timeline (the vertical ruler) */
+		.timeline::after {
+		content: '';
+		position: absolute;
+		width: 6px;
+		background-color: white;
+		top: 0;
+		bottom: 0;
+		left: 50%;
+		margin-left: -3px;
+		}
+
+		/* Container around content */
+		.container {
+		padding: 5px 45px;
+		position: relative;
+		background-color: inherit;
+		width: 60%;
+		}
+
+		/* The circles on the timeline */
+		.container::after {
+		content: '';
+		position: absolute;
+		width: 25px;
+		height: 25px;
+		right: -17px;
+		background-color: white;
+		border: 4px solid #FF9F55;
+		top: 15px;
+		border-radius: 50%;
+		z-index: 1;
+		}
+
+		/* Place the container to the left */
+		.left {
+		left: -10.4%;
+		}
+
+		/* Place the container to the right */
+		.right {
+		left: 50%;
+		}
+
+		/* Add arrows to the left container (pointing right) */
+		.left::before {
+		content: " ";
+		height: 0;
+		position: absolute;
+		top: 22px;
+		width: 0;
+		z-index: 1;
+		right: 30px;
+		border: medium solid white;
+		border-width: 10px 0 10px 10px;
+		border-color: transparent transparent transparent white;
+		}
+
+		/* Add arrows to the right container (pointing left) */
+		.right::before {
+		content: " ";
+		height: 0;
+		position: absolute;
+		top: 22px;
+		width: 0;
+		z-index: 1;
+		left: 30px;
+		border: medium solid white;
+		border-width: 10px 10px 10px 0;
+		border-color: transparent white transparent transparent;
+		}
+
+		/* Fix the circle for containers on the right side */
+		.right::after {
+		left: -13px;
+		}
+
+		/* The actual content */
+		.content {
+		padding: 0px 15px;
+		background-color: white;
+		position: relative;
+		border-radius: 6px;
+		}
+	/*Vertical tabs CSS*/
+		* {box-sizing: border-box}
+
+		/* Style the tab */
+		.tab {
+			float: left;
+			border: 1px solid #ccc;
+			background-color: #eeeeee;
+			width: 20%;
+			/*height: 700px;
+			*/
+			display: inline-block;
+			padding: 1% 1%;
+			height: 100%;
+			text-align: center;
+			
+		}
+
+		/* Style the buttons that are used to open the tab content */
+		.tab button {
+			display: inline-block;
+			background-color: inherit;
+			color: black;
+			padding: 0px 0px;
+			width: 100%;
+			border: none;
+			outline: none;
+			text-align: center;
+			cursor: pointer;
+			transition: 0.3s;
+		}
+
+		/* Change background color of buttons on hover */
+		.tab button:hover {
+		background-color: #ddd;
+		}
+
+		/* Create an active/current "tab button" class */
+		.tab button.active {
+		background-color: #ccc;
+		}
+
+		/* Style the tab content */
+		.tabcontent {
+		float: right;
+		padding: 1% 1%;
+		border: 1px solid #ccc;
+		width: 80%;
+		height: 100%;
+		margin: auto;
+		border-left: none;
+		display: inline-block;
+		
+		/*height: 700px;*/
+		background: #eeeeee;
+		margin: 0 0 0 0;
+		}
+		.tabMainContent {
+			display: inline-block;
+			/*float: left;*/
+			padding: 0px 0px;
+			width: 100%;
+			border-left: none;
+			background: #ffffff;
+			margin: 0 0 0 0;
+			}
 /* Basic */
 
 	@-ms-viewport {
@@ -3016,10 +3179,12 @@ input, select, textarea {
 			border: solid 1px;
 			border-left: 0;
 			border-right: 0;
+			table-layout: auto;
 		}
 
 		table td {
 			padding: 0.75rem 0.75rem;
+			font-size: 0.7rem;
 		}
 
 		table th {
@@ -3076,11 +3241,11 @@ input, select, textarea {
 			}
 
 	table tbody tr {
-		border-color: #eeeeee;
+		border-color: #ffffff;
 	}
 
 		table tbody tr:nth-child(2n + 1) {
-			background-color: rgba(220, 220, 220, 0.25);
+			background-color: rgba(220, 220, 220, 0.11);
 		}
 
 	table th {
@@ -3234,7 +3399,7 @@ input, select, textarea {
 			width: 100%;
 			height: 100%;
 			background-color: #212931;
-			background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg");
+			background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/blueprint.jpg");
 			background-size: auto,								auto,														100% auto;
 			background-position: center,								center,														top center;
 			background-repeat: repeat,								no-repeat,													no-repeat;
@@ -3779,7 +3944,7 @@ input, select, textarea {
 		}
 
 		#main > .post {
-			padding: 8rem 8rem 6rem 8rem ;
+			padding: 2rem 4rem 2rem 4rem ;
 		}
 
 			#main > .post header.major > .date {
@@ -4620,7 +4785,8 @@ input, select, textarea {
 			right: 0;
 			text-align: right;
 			top: 0;
-			vertical-align: middle;
+			
+			/*vertical-align: middle;*/
 			width: 7rem;
 		}
 
