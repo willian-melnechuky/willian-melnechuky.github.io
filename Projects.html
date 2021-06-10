@@ -52,9 +52,10 @@
 								<button class="tablinks" onclick="openSection(event, 'Lab Projects','tabcontent')">Lab Projects</button>
 								<button class="tablinks" onclick="openSection(event, 'School Projects','tabcontent')">School Projects</button>
 								<button class="tablinks" onclick="openSection(event, 'Personal Projects','tabcontent')">Personal Projects</button>
-								<button class="tablinks" onclick="openSection(event, 'Work Projects','tabcontent')">Work Projects</button>
+								<button class="tablinks" onclick="clear('tabMainContent')">Clear</button>
 							</div>
-							
+							<!-- onclick="openSection(event, 'Work Projects','tabcontent')"-->
+
 							<div id="Lab Projects" class="tabcontent">
 								<h3>Lab Projects</h3>
 								<div class="table-wrapper">
@@ -400,6 +401,13 @@
 					// Show the current tab, and add an "active" class to the link that opened the tab
 					document.getElementById(tabName).style.display = "block";
 					evt.currentTarget.className += " active";
+				}
+				function Clear(section) {
+					tabcontent = document.getElementsByClassName(section);
+					for (i = 0; i < tabcontent.length; i++) {
+						tabcontent[i].style.display = "none";
+					}
+					alert("I am an alert box!");
 				}
 			</script>
 	</body>
