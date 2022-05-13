@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css?family=montserrat:200,300,400,600");
+
+:root {
+    --blue: #AFBFDC;
+    --white: #faf8f8;
+    --green: #4E873D;
+    --black:#171A1C;
+    --grey:#757575;
+    --font: 'Times New Roman', Times, serif;
+}
+.navigation {
+    position:fixed;
+    Left: 20px;
+    Top: 20px;
+    z-index: 10;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 12px;
+}
+
+a.white-mode, a.white-mode:link, a.white-mode:visited, a.white-mode:active {
+    font-family:var(--font);
+    font-size: 12px;
+    text-decoration: none;
+    padding: 4px 8px;
+    color: var(--black);
+} 
+a.white-mode:hover, a.white-mode:link:hover, a.white-mode:visited:hover, a.white-mode:active:hover {
+    background: var(--green);
+    color: var(--white);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background: var(--grey);
+}
+
+.title {
+    z-index: index 10;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-family:var(--font);
+    text-align: center;
+    width: 100%;
+}
+
+.title h1 {
+    position: relative;
+    color: var(--black);
+    font-weight: 600;
+    font-size: 60px;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+    text-shadow: 0 0 30px var(--grey);
+}
+.title h1 span {
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+    color: var(--grey);
+}
+.title h3 {
+    font-weight:200;
+    font-size: 20px;
+    padding:0;
+    margin: 0;
+    line-height: 1;
+    color: var(--black);
+    letter-spacing: 2px;
+    text-shadow: 0 0 30px var(--grey);
+}
