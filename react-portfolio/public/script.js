@@ -1,6 +1,6 @@
-let max_particles = 500;
+let max_particles = 2500;
 let particles = [];
-let frequency = 100;
+let frequency = 50;
 let init_num = max_particles/4;
 let max_time = frequency * max_particles;
 let time_to_recreate = false;
@@ -30,22 +30,27 @@ class Particle {
       y: $(window).height() / 2 };
 
     this.point_of_attraction = {
-      x: $(window).width() / 2,
+      x: $(window).width(),
+      //x: $(window).width()/2,
       y: $(window).height() / 2 };
 
 
 
 
     if (Math.random() > 0.5) {
-      this.x = $(window).width() * Math.random();
+      //this.x = $(window).width() * Math.random();
+      this.x = 0;
       this.y = Math.random() > 0.5 ? -Math.random() - 100 : $(window).height() + Math.random() + 100;
     } else {
-      this.x = Math.random() > 0.5 ? -Math.random() - 100 : $(window).width() + Math.random() + 100;
+      //this.x = Math.random() > 0.5 ? -Math.random() - 100 : $(window).width() + Math.random() + 100;
+      this.x = 0;
       this.y = $(window).height() * Math.random();
 
     }
 
-    this.s = Math.random() * 2;
+    //this.s = Math.random() * 2;
+    this.s = Math.random() * 3;
+
     this.a = 0;
     this.w = $(window).width();
     this.h = $(window).height();
