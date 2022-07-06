@@ -1,3 +1,25 @@
+@import "../../global.scss";
+
 .intro {
-    background-color: lightpink;
+    background-color: $white;
+    text-align: center;
+
+    .title {
+        z-index: index 10;
+        position: absolute;
+        top: calc((100vh - 300px)/2);
+        //transform: translateX(-50%) translateY(-50%);
+        // font-family:var(--font);
+        
+        width: 100%;
+        color: $black;
+        font-weight: 600;
+        font-size: 60px;
+        line-height: 2.5;
+
+        margin: 0;
+        text-shadow: 0px 0px 30px $grey;
+
+    }
+    
 }

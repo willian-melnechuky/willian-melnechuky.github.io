@@ -1,4 +1,4 @@
-/* @import url("https://fonts.googleapis.com/css?family=montserrat:200,300,400,600"); */
+@import url("https://fonts.googleapis.com/css?family=montserrat:200,300,400,600");
 
 :root {
     --blue: #AFBFDC;
@@ -14,19 +14,7 @@
     Top: 20px;
     z-index: 10;
     font-family:'Times New Roman', Times, serif;
-    font-size: 30px;
-    text-decoration: none;
-    color: var(--black);
-    background-color: var(--white);
-}
-.sections {
-    width: 100%;
-    height: calc(100vh - 70px);
-    background-color: var(--white);
-    position: relative;
-    top: 70px;
-    scroll-behavior: smooth;
-
+    font-size: 12px;
 }
 
 a.white-mode, a.white-mode:link, a.white-mode:visited, a.white-mode:active {

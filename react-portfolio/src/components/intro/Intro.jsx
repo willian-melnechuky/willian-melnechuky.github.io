@@ -2,8 +2,10 @@ import "./intro.scss"
 
 export default function Intro(){
     return (
-        <div className="intro">
-
+        <div className="intro" id="intro">
+            <div className="title">
+                Willian
+            </div>
         </div>
     )
 }
